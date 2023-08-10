@@ -87,6 +87,10 @@ script: brands.html
 - url: /blog-detail5.html
   script: blog-detail5.html   
 
+- url: /blog-detail6.html
+  script: blog-detail6.html   
+
+
 - url: /(.*)\.html$
   static_files: /\1.html
   upload: /*\.html$
