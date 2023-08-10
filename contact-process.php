@@ -13,14 +13,15 @@
 
 	// FIRST: 
 	// Instead of test@test.com put the email address of the mailing list
-  use \google\appengine\api\mail\Message;
+//   use google\appengine\api\mail\Message;
+use google\appengine\api\mail\Message;
   use google\appengine\api\users\User;
   use google\appengine\api\users\UserService;
   
 
   $headers = "MIME-Version: 1.0" . "\r\n";
   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-	$emailTo = 'vikas@360digitaltransformation.com'; // Change with your Email address
+	$emailTo = 'sharansandhu027@gmail.com'; // Change with your Email address
 	$contactSubject = 'Contact Form Website'; // Change Subject
 
   
@@ -59,7 +60,7 @@
 // echo $contactMessage;
 // echo $contactName;
 // echo $contactSubject;
-$body_form=" 'Name: '$contactName '\n ' 'Email:'$Email=$contactEmail  ' \n''Subject:' $subject= $contactSubject ' \n''Message:' $message= $contactMessage";
+$body_form=" 'Name: '$contactName '\n ' 'Email:'=$contactEmail  ' \n''Subject:'= $contactSubject ' \n''Message:'= $contactMessage";
 	// if(!isset($hasError)) {
 	// 	mail($emailTo, $contactSubject, $contactMessage, "From: " . $contactName . " <" . $contactEmail . ">");
 	// }
@@ -67,8 +68,8 @@ $body_form=" 'Name: '$contactName '\n ' 'Email:'$Email=$contactEmail  ' \n''Subj
   try {
 
     $message = new Message();
-    $message->setSender('360digitran@gmail.com');
-    $message->addTo('vikas@360digitaltransformation.com');
+    $message->setSender('sharandeep.sandhu29@gmail.com');
+    $message->addTo('sharansandhu027@gmail.com');
     $message->setSubject('360DT- Contact form');
     $message->setTextBody($body_form);
     $message->send();

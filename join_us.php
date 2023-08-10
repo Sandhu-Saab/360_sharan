@@ -79,7 +79,7 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     $message = new Message();
     $message->setSender('360digitran@gmail.com');
-    $message->addTo('vikas@360digitaltransformation.com');
+    $message->addTo('sharansandhu027@gmail.com');
     $message->setSubject('360DT- Contact form');
     $message->setTextBody($body_form);
     $message->addAttachment($path);
