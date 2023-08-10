@@ -68,7 +68,7 @@ $body_form=" 'Name: '$contactName '\n ' 'Email:'=$contactEmail  ' \n''Subject:'=
   try {
 
     $message = new Message();
-    $message->setSender('sharandeep.sandhu29@gmail.com');
+    $message->setSender('360digitran@gmail.com');
     $message->addTo('sharansandhu027@gmail.com');
     $message->setSubject('360DT- Contact form');
     $message->setTextBody($body_form);
