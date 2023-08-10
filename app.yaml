@@ -1,0 +1,145 @@
+runtime: php55
+threadsafe: yes
+api_version: 1
+
+inbound_services:
+# [START mail_service]
+- mail
+# [END mail_service]
+# [START bounce_service]
+- mail_bounce
+# [END bounce_service]
+
+runtime_config:
+  document_root: web
+
+
+handlers:
+- url: /
+  script: /index.html
+ 
+- url: /index.html
+  script: index.html
+
+- url: /about.html
+  script: about.html
+
+- url: /coming-soon.html
+  script: coming-soon.html  
+ 
+- url: /consulting.html
+  script: consulting.html  
+
+- url: /contact2.html
+  script: contact2.html
+
+- url: /core_areas.html
+  script: core_areas.html
+
+- url: /corporate_training.html
+  script: corporate_training.html  
+
+- url: /events.html
+  script: events.html
+
+- url: /process.html
+  script: process.html
+  
+- url: /project-detail.html
+  script: project-detail.html
+  
+- url: /services.html
+  script: services.html  
+
+- url: /tailored_courses.html
+  script: tailored_courses.html
+
+- url: /team.html
+  script: team.html  
+
+- url: /trainers.html
+  script: trainers.html  
+
+- url: /why_us.html
+  script: why_us.html  
+
+- url: /work_with_us.html
+  script: work_with_us.html 
+  
+- url: /fly_me_trainer.html
+  script: fly_me_trainer.html 
+  
+- url: /blog.html
+  script: blog.html   
+
+- url: /team.html
+script: team.html   
+
+- url: /brands.html
+script: brands.html   
+
+- url: /blog-detail.html
+  script: blog-detail.html 
+
+- url: /blog-detail4.html
+  script: blog-detail4.html 
+
+- url: /blog-detail5.html
+  script: blog-detail5.html   
+
+- url: /(.*)\.html$
+  static_files: /\1.html
+  upload: /*\.html$
+
+- url: /contact-process.php
+  script: contact-process.php
+
+- url: /join_us.php
+  script: join_us.php  
+
+- url: /robots.txt
+  script: robots.txt 
+ 
+
+- url: /video
+  static_dir: video
+
+- url: /webfonts
+  static_dir: webfonts
+  
+- url: /css
+  static_dir: css
+  
+- url: /fonts
+  static_dir: fonts
+  
+- url: /images
+  static_dir: images
+   
+- url: /js
+  static_dir: js
+
+- url: /vendor
+  static_dir: vendor
+
+- url: /vendor/autoload.php
+  script: vendor/autoload.php  
+
+# - url: /vendor/phpmailer/phpmailer/src/Exception.php
+#   script: vendor/phpmailer/phpmailer/src/Exception.php
+  
+# - url: /vendor/phpmailer/phpmailer/src/PHPMailer.php
+#   script: vendor/phpmailer/phpmailer/src/PHPMailer.php
+  
+# - url: /vendor/phpmailer/phpmailer/src/SMTP.php
+#   script: vendor/phpmailer/phpmailer/src/SMTP.php  
+  
+# - url: /composer.json
+#   script: composer.json
+
+# - url: /composer.lock
+#   script: composer.lock
+  
+- url: /(.*\.(gif|png|jpg))$
+  static_files: static/\1
+  upload: static/.*\.(gif|png|jpg)$
