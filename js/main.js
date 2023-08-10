@@ -272,7 +272,6 @@ window.jQuery(document).ready(function($){
 
 	// Contact form submit process //
 	$('#contact-us-form').submit(function() {
-		alert("submit")
 		var form = $(this),
 			hasError = false;
 
