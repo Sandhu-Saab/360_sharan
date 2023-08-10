@@ -4211,6 +4211,10 @@ width:100%;
     background: url(../images/content/blog/tensor_flow.png);
     background-position: left!important;
 }
+.bg-blog-banner_6 {
+    background: url(../images/content/blog/itil2.jpg);
+    background-position: left!important;
+}
 .bg-project {
     background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .2)), url(../images/content/breadcrumb/project-detail.jpg);
     background-position: left!important;
