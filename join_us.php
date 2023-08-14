@@ -78,7 +78,7 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
   try {
 
     $message = new Message();
-    $message->setSender('360digitran@gmail.com');
+    $message->setSender('trainings.360.dt@gmail.com');
     $message->addTo('vikas@360digitaltransformation.com');
     $message->setSubject('360DT- Contact form');
     $message->setTextBody($body_form);
