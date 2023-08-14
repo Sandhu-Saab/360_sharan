@@ -1,17 +1,20 @@
 runtime: php55
-threadsafe: yes
-api_version: 1
+threadsafe: true
+api_version: '1'
+
+instance_class: F1
+
 
 inbound_services:
 # [START mail_service]
 - mail
-# [END mail_service]
-# [START bounce_service]
 - mail_bounce
-# [END bounce_service]
+
 
 runtime_config:
   document_root: web
+
+
 
 
 handlers:
@@ -75,6 +78,8 @@ handlers:
 - url: /team.html
   script: team.html   
 
+- url: /topics.html
+  script: topics.html 
 
 - url: /brands.html
   script: brands.html   
@@ -148,3 +153,10 @@ handlers:
 - url: /(.*\.(gif|png|jpg))$
   static_files: static/\1
   upload: static/.*\.(gif|png|jpg)$
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+service_account: sincere-axon-308404@appspot.gserviceaccount.com
