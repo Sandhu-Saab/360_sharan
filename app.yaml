@@ -39,8 +39,8 @@ handlers:
 - url: /core_areas.html
   script: core_areas.html
 
-- url: /corporate_training.html
-  script: corporate_training.html  
+- url: /instructor_augmentation.html
+  script: instructor_augmentation.html  
 
 - url: /events.html
   script: events.html
@@ -54,8 +54,8 @@ handlers:
 - url: /services.html
   script: services.html  
 
-- url: /tailored_courses.html
-  script: tailored_courses.html
+- url: /content_management.html
+  script: content_management.html
 
 - url: /team.html
   script: team.html  
