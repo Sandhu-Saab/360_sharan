@@ -1,162 +1,150 @@
-runtime: php55
-threadsafe: true
-api_version: '1'
 
-instance_class: F1
-
-
-inbound_services:
-# [START mail_service]
-- mail
-- mail_bounce
-
+runtime: python39
 
 runtime_config:
   document_root: web
 
-
-
-
 handlers:
-- url: /
-  script: /index.html
- 
+- url: /(.+\.(ico|txt|gif|jpg|png|css|js))$
+  static_files: web/\1
+  upload: web/(.+)
+
 - url: /index.html
-  script: index.html
+  static_files: web/index.html
+  upload: web/index.html
 
 - url: /about.html
-  script: about.html
+  static_files: web/about.html
+  upload: web/about.html
 
 - url: /coming-soon.html
-  script: coming-soon.html  
+  static_files: web/coming-soon.html
+  upload: web/coming-soon.html 
  
 - url: /consulting.html
-  script: consulting.html  
+  static_files: web/consulting.html
+  upload: web/consulting.html  
 
 - url: /contact2.html
-  script: contact2.html
+  static_files: web/contact2.html
+  upload: web/contact2.html
 
 - url: /core_areas.html
-  script: core_areas.html
+  static_files: web/core_areas.html
+  upload: web/core_areas.html
 
 - url: /instructor_augmentation.html
-  script: instructor_augmentation.html  
+  static_files: web/instructor_augmentation.html
+  upload: web/instructor_augmentation.html  
 
 - url: /events.html
-  script: events.html
+  static_files: web/events.html
+  upload: web/events.html
 
 - url: /process.html
-  script: process.html
+  static_files: web/process.html
+  upload: web/process.html
   
 - url: /project-detail.html
-  script: project-detail.html
+  static_files: web/project-detail.html
+  upload: web/project-detail.html
   
 - url: /services.html
-  script: services.html  
+  static_files: web/services.html
+  upload: web/services.html  
 
 - url: /content_management.html
-  script: content_management.html
+  static_files: web/content_management.html
+  upload: web/content_management.html
 
 - url: /team.html
-  script: team.html  
+  static_files: web/team.html
+  upload: web/team.html  
 
 - url: /trainers.html
-  script: trainers.html  
+  static_files: web/trainers.html
+  upload: web/trainers.html  
 
 - url: /why_us.html
-  script: why_us.html  
+  static_files: web/why_us.html
+  upload: web/why_us.html  
 
 - url: /work_with_us.html
-  script: work_with_us.html 
+  static_files: web/work_with_us.html
+  upload: web/work_with_us.html 
   
 - url: /fly_me_trainer.html
-  script: fly_me_trainer.html 
+  static_files: web/fly_me_trainer.html
+  upload: web/fly_me_trainer.html 
   
 - url: /blog.html
-  script: blog.html   
-
-- url: /team.html
-  script: team.html   
+  static_files: web/blog.html
+  upload: web/blog.html   
 
 - url: /topics.html
-  script: topics.html 
+  static_files: web/topics.html
+  upload: web/topics.html 
 
 - url: /brands.html
-  script: brands.html   
+  static_files: web/brands.html
+  upload: web/brands.html   
 
 - url: /blog-detail.html
-  script: blog-detail.html 
+  static_files: web/blog-detail.html
+  upload: web/blog-detail.html 
 
 - url: /blog-detail4.html
-  script: blog-detail4.html 
+  static_files: web/blog-detail4.html
+  upload: web/blog-detail4.html 
 
 - url: /blog-detail5.html
-  script: blog-detail5.html   
+  static_files: web/blog-detail5.html
+  upload: web/blog-detail5.html   
 
 - url: /blog-detail6.html
-  script: blog-detail6.html   
+  static_files: web/blog-detail6.html
+  upload: web/blog-detail6.html   
 
-
-- url: /(.*)\.html$
-  static_files: /\1.html
-  upload: /*\.html$
 
 - url: /contact-process.php
-  script: contact-process.php
+  script: web/contact-process.php
 
 - url: /join_us.php
-  script: join_us.php  
+  script: web/join_us.php  
 
 - url: /robots.txt
-  script: robots.txt 
- 
+  static_files: web/robots.txt 
+  upload: web/robots.txt
 
 - url: /video
-  static_dir: video
+  static_dir: web/video
 
 - url: /webfonts
-  static_dir: webfonts
+  static_dir: web/webfonts
   
 - url: /css
-  static_dir: css
+  static_dir: web/css
   
 - url: /fonts
-  static_dir: fonts
+  static_dir: web/fonts
   
 - url: /images
-  static_dir: images
+  static_dir: web/images
    
 - url: /js
-  static_dir: js
+  static_dir: web/js
 
 - url: /vendor
-  static_dir: vendor
+  static_dir: web/vendor
 
-- url: /vendor/autoload.php
-  script: vendor/autoload.php  
-
-# - url: /vendor/phpmailer/phpmailer/src/Exception.php
-#   script: vendor/phpmailer/phpmailer/src/Exception.php
-  
-# - url: /vendor/phpmailer/phpmailer/src/PHPMailer.php
-#   script: vendor/phpmailer/phpmailer/src/PHPMailer.php
-  
-# - url: /vendor/phpmailer/phpmailer/src/SMTP.php
-#   script: vendor/phpmailer/phpmailer/src/SMTP.php  
-  
-# - url: /composer.json
-#   script: composer.json
-
-# - url: /composer.lock
-#   script: composer.lock
-  
-- url: /(.*\.(gif|png|jpg))$
-  static_files: static/\1
-  upload: static/.*\.(gif|png|jpg)$
+- url: /.*
+  static_files: web/index.html
+  upload: web/index.html
 
 automatic_scaling:
   min_idle_instances: automatic
   max_idle_instances: automatic
   min_pending_latency: automatic
   max_pending_latency: automatic
+
 service_account: sincere-axon-308404@appspot.gserviceaccount.com

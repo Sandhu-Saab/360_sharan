@@ -329,7 +329,9 @@ figure iframe {
 
 video {
     width: 100%;
-    height: auto;
+    height: 240px;
+    /* margin-top: -15px; */
+
 }
 
 
